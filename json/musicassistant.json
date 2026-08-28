@@ -1,0 +1,48 @@
+{
+  "name": "Music Assistant",
+  "slug": "musicassistant",
+  "categories": [13],
+  "date_created": "2026-08-27",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 8095,
+  "documentation": "https://www.music-assistant.io/installation/",
+  "website": "https://www.music-assistant.io/",
+  "repository": "https://github.com/music-assistant/server",
+  "architectures": ["amd64"],
+  "platforms": ["pve"],
+  "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/music-assistant.webp",
+  "description": "Music Assistant is an open-source music library manager and streaming server that connects music providers to a wide range of networked players.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/musicassistant.sh",
+      "resources": {
+        "cpu": 2,
+        "ram": 4096,
+        "hdd": 12,
+        "os": "Debian",
+        "version": "13"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "Music Assistant officially supports its Home Assistant app and Docker image. This script installs the server directly inside the LXC to follow Community Scripts conventions, so treat it as an experimental native installation.",
+      "type": "warning"
+    },
+    {
+      "text": "For player discovery, put the LXC on the same Layer-2 network/VLAN as the players and allow multicast/mDNS traffic.",
+      "type": "info"
+    },
+    {
+      "text": "Optional providers that depend on extra binaries shipped by the official container may require additional testing or dependencies.",
+      "type": "warning"
+    }
+  ]
+}
