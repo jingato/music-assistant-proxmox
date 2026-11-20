@@ -4,6 +4,10 @@
 # License: MIT | https://github.com/jingato/music-assistant-proxmox/raw/main/LICENSE
 # Source: https://www.music-assistant.io/ | Github: https://github.com/music-assistant/server
 
+# APP is not defined in the install script's environment with the current
+# community-scripts/core engine, and the install runs with nounset enabled.
+APP="${APP:-Music Assistant}"
+
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
